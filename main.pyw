@@ -100,7 +100,6 @@ pygame.init()
 font=pygame.font.Font(os.path.join("C:\\Windows\\Fonts", "Consola.ttf"), 64)
 
 while True:
-	msgfg=True
 	t1=threading.Thread(target=getCam1)
 	t2=threading.Thread(target=getCam2)
 	t3=threading.Thread(target=getScr)
@@ -115,7 +114,10 @@ while True:
 		pythoncom.PumpWaitingMessages()
 		time.sleep(0.01)
 
-	msgfg=False
+	t1.join()
+	t2.join()
+	t3.join()
+	t4.join()
 
 	bkg=cv2.imread(PATH_0+"\\assets\\pictures\\bg.jpg")
 	x,y=bkg.shape[0::2]
