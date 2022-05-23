@@ -14,10 +14,14 @@ if not os.path.exists(PATH_0):
 	os.makedirs(PATH_0)
 
 import cv2
-cam1=cv2.Mat
-cam2=cv2.Mat
-scn=cv2.Mat
-timp=cv2.Mat
+cam1=cv2.imread(PATH_0+"\\assets\\pictures\\invalid-camera.jpg")
+cam1=cv2.resize(cam1,dsize=(480,360))
+cam2=cv2.imread(PATH_0+"\\assets\\pictures\\invalid-camera.jpg")
+cam2=cv2.resize(cam1,dsize=(480,360))
+scn=cv2.imread(PATH_0+"\\assets\\pictures\\invalid-camera.jpg")
+scn=cv2.resize(scn,dsize=(1440,810))
+timp=cv2.imread(PATH_0+"\\assets\\pictures\\invalid-camera.jpg")
+timp=cv2.resize(timp,dsize=(500,120))
 
 def getCam1(): # camera 1
 	global cam1
